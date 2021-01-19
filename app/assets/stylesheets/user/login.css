@@ -1,0 +1,16 @@
+/* .field {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+} */
+
+.login-main {
+  margin-top: 200px;
+  width: 100%;
+  background: #fff;
+  color: grey;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}

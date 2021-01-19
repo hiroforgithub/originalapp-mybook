@@ -1,0 +1,111 @@
+<%= render "shared/header" %>
+<%# <h1>Books#index</h1>
+
+<p>Find me in app/views/books/index.html.erb</p> %>
+<div class="home-main">
+  <li class='list'>
+    <h2>Novel</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 2, :params_controller => params[:controller]) do %>
+      <%= image_tag "category novel.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Hobby</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 6, :params_controller => params[:controller])do %>
+      <%= image_tag "category hobby.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Business</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 3, :params_controller => params[:controller])do %>
+      <%= image_tag "category business-1.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Sports</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 9, :params_controller => params[:controller])do %>
+      <%= image_tag "category sports.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Language</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 11, :params_controller => params[:controller])do %>
+      <%= image_tag "category language-1.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Comic</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 12, :params_controller => params[:controller])do %>
+      <%= image_tag "category comics.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Technology</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 4, :params_controller => params[:controller])do %>
+      <%= image_tag "category IT.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Art</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 8, :params_controller => params[:controller])do %>
+        <%= image_tag "category art.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Medical</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 10, :params_controller => params[:controller])do %>
+      <%= image_tag "category medical.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  <li class='list'>
+    <h2>Finance</h2>
+    <div class="imgbox">
+      <div class="image" >
+      <%= link_to books_path(:category_id => 7, :params_controller => params[:controller])do %>
+      <%= image_tag "category finance.png", class: "book-img" %>
+      <% end %>
+      </div>
+    </div>
+  </li>
+  
+</div>
+
+<%= render "shared/footer" %>
+
+

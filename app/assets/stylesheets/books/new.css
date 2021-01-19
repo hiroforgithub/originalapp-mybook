@@ -1,0 +1,12 @@
+.new-main {
+  margin-top: 200px;
+  background-color: #FFF;
+  width: 100vw;
+  min-width: 450px;
+  text-align: center;
+  color: gray;
+}
+.new-main h2 {
+  font-size: 20px;
+  margin-bottom: 50px;
+}

@@ -1,0 +1,82 @@
+<%= render "shared/header" %>
+
+
+<div class="show-main">
+  <div show-left>
+    <div calss="show-main-img">
+      <%= image_tag @book.image, class: "main-img" %>
+    </div>
+  </div>
+
+  <div class="show-right">
+    <div class="user-info">
+      <%= @book.user.nick_name %>　さん
+    </div>  
+    <div class="book-review">
+      <%= @book.review.name %>
+    </div>
+    <div class="book-text">
+    <%= @book.text %>
+    </div>
+    <div class="book-title">
+    <%= @book.title %>
+    </div>
+    <div class="book-time">
+    <%= @book.time %>時間で読み終わる
+    </div>
+    <div class="book-url">
+    <%= @book.url %>
+    </div>
+    <div class="book-author">
+    作者   <%= @book.author %>
+    </div>
+    <%# いいね機能%>
+    <div class="likes">
+    <% if current_user.already_liked?(@book) %>
+      <%= link_to book_like_path(@book), method: :delete do %>
+      <i class="fas fa-book-open fas-color"></i>
+      <% end %> 
+    <% else %>
+      <%= link_to book_likes_path(@book), method: :post do %>
+      <i class="fas fa-book-open far-color"></i>
+      <% end %> 
+    <% end %>
+    <%= @book.likes.count %>
+    </div>
+    <%# いいね機能%>
+    <% if current_user.id == @book.user_id%>
+    <div class="edit-btn">
+      <%= link_to 'Edit', edit_book_path, method: :get, class: "book-edit-btn" %>
+    </div>
+    <div class="delete-btn">
+      <%= link_to 'Delete', book_path(@book.id), method: :delete, class:'book-delete-btn' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="show-bottom">
+  <h2 class="show-h2">
+  <%= @book.user.nick_name %>さんの投稿一覧
+  </h2>
+  <div class="user-books">
+    <ul class='show-lists'>
+      <% @books.each do |book| %> 
+        <li class='show-list'>
+          <%= link_to book_path(book.id), method: :get  do %>
+          <div class='show-info'>
+            <%= image_tag book.image, class: "show-img" %>
+            <%#= book.user.nick_name %>
+          </div>
+          <div class='book-title'>
+            <%= book.title %>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+<%#= render "shared/footer" %>

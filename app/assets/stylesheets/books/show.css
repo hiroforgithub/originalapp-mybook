@@ -1,0 +1,82 @@
+.show-main {
+  margin-top: 200px;
+  background-color: #FFF;
+  width: 100vw;
+  min-width: 50px;
+  display: flex;
+  align-content: row;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.show-left {
+  width: 50%;
+}
+
+.show-main-img {
+  width: 40vw;
+  height: 50vw;
+}
+
+.show-right {
+  width: 50%;
+  color:gray;
+}
+
+.show-img {
+  width: 22vw;
+  height: 33vw;
+}
+
+.fas-color {
+  color: skyblue;
+}
+
+.far-color {
+  color: skyblue;
+  opacity: 0.3;
+}
+
+.show-h2 {
+  text-align: center;
+  margin: 100px 0 50px 0;
+  color: grey;
+}
+
+.edit-btn {
+  background-color: grey;
+  width: 100px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 20px;
+  
+}
+
+.delete-btn {
+  background-color: grey;
+  width: 100px;
+  border-radius: 3px;
+  text-align: center;
+  margin: 20px;
+}
+
+.book-edit-btn {
+  text-decoration: none;
+  color: white;
+}
+
+.book-delete-btn {
+  text-decoration: none;
+  color: white;
+}
+.show-lists {
+  display: flex;
+}
+.show-lists {
+  justify-content: space-between;
+}
+
+.book-review {
+  color: skyblue;
+}
+

@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<div class="index-body">
+  <div class="title">
+    <h1>
+    <% @bookcategory.each do |book| %> 
+    <%= book.category.name %> 
+    <% end %>
+    </h1>
+  </div>
+
+  <div class="index-main">
+    <div class="likes-ranking">
+      <h2>読みたい!!ランキング</h2>
+      <ul>
+        <li>
+        <% @booklike.each do |book| %> 
+        <div class="ranking-book-title">
+          <%= book.title %> 
+          <%= book.likes.count %>いいね 
+        </div>
+        <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="index-right">
+      <ul class='index-lists'>
+      <% @bookcategory.each do |book| %> 
+        <li class='list'>
+          <%= link_to book_path(book.id), method: :get  do %>
+          <div class='book-info'>
+            <div class="index-img">
+            <%= image_tag book.image , class: "book-img" %>
+            </div>
+            <div class="index-user">
+            user: <%= book.user.nick_name %>
+            </div>
+            <div class='book-title'>
+            book: <%= book.title %>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -1,0 +1,72 @@
+.index-body {
+  width: 100%;
+  margin-top: 200px;
+}
+
+.show-main
+
+.title h1 {
+  text-align: center;
+  color: gray;
+  font-size: 40px;
+  width: 100vw;
+}
+
+.index-main {
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+}
+
+.likes-ranking {
+  width: 30%;
+}
+
+.likes-ranking h2{
+  text-align: center;
+  font-size: 20px;
+}
+
+.likes-ranking ul {
+  display: flex;
+}
+
+.likes-ranking li {
+  flex-direction: column;
+}
+
+
+.index-right {
+  width: 70%;
+}
+
+
+.index-lists {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-left: 50px;
+}
+
+.list {
+  list-style: none;
+  width: calc((100% - 200px)/2);
+  margin: 30px 50px 0px 0px;
+  // display: block;
+}
+
+// .index-img {
+//   width: 200px;
+//   height: 300px;
+//   border: 1px solid gray;
+// }
+
+.book-img {
+  width: 200px;
+  height: auto;
+}
+
+
+
+
