@@ -8,3 +8,12 @@
   cursor: pointer;
   text-align: center;
 }
+
+.submit-btn {
+  color: gray;
+}
+.submit-btn:hover {
+  opacity: 0.5;
+}
+
+

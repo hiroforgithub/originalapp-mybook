@@ -3,7 +3,9 @@
   margin-top: 200px;
 }
 
-.show-main
+.index-main {
+  color: gray;
+}
 
 .title h1 {
   text-align: center;
@@ -14,7 +16,7 @@
 
 .index-main {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 50px;
   display: flex;
 }
 
@@ -27,19 +29,34 @@
   font-size: 20px;
 }
 
-.likes-ranking ul {
+.ranking-li {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.ranking-book {
+  width: 100%;
+  text-align: left;
+  margin: 20px auto 0 20px;
+  flex-direction: row;
   display: flex;
 }
 
-.likes-ranking li {
-  flex-direction: column;
-}
-
-
-.index-right {
+.ranking-book-title {
   width: 70%;
 }
 
+.ranking-book-likes {
+  text-align: right;
+  width: 30%;
+}
+
+.index-right {
+  width: 70%;
+  color: gray;
+  text-decoration: none;
+}
 
 .index-lists {
   display: flex;
@@ -53,14 +70,21 @@
   list-style: none;
   width: calc((100% - 200px)/2);
   margin: 30px 50px 0px 0px;
-  // display: block;
 }
 
-// .index-img {
-//   width: 200px;
-//   height: 300px;
-//   border: 1px solid gray;
-// }
+.index-link {
+  text-decoration: none;
+}
+
+.index-user {
+  color: gray;
+  text-decoration: none;
+}
+
+.book-title {
+  color: gray;
+  text-decoration: none;
+}
 
 .book-img {
   width: 200px;

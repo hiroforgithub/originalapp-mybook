@@ -14,16 +14,16 @@ class BooksController < ApplicationController
     @bookcategory = Book.where(category_id: params[:category_id])
     @params_controller = params[:params_controller]
     @booklike = Book.all.sort {|a,b| b.liked_users.count <=> a.liked_users.count}
-
+    
   end
   
   # def categoryNovel
   # end
-
+  
   # def categoryHoby
   #   @book = Book.where(category_id: 6)
   # end
-
+  
   def new
     @book = Book.new
   end
@@ -36,10 +36,10 @@ class BooksController < ApplicationController
       render :new
     end
   end
-
+  
   def edit
   end
-
+  
   def update
     if @book.update(book_params)
       redirect_to book_path(@book)
@@ -47,16 +47,18 @@ class BooksController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy 
     redirect_to root_path if @book.destroy
   end
-
-
+  
+  
   def show
     @books = Book.where(user_id: @book.user)
+  
+    # @books_user = Book.where(user_id: current_user.id)
   end
-
+  
   private
   def book_params
     params.require(:book).permit(:title, :image, :text, :author, :time, :url, :category_id, :review_id).merge(user_id: current_user.id)

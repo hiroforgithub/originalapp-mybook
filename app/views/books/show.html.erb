@@ -8,52 +8,76 @@
     </div>
   </div>
 
-  <div class="show-right">
-    <div class="user-info">
-      <%= @book.user.nick_name %>　さん
-    </div>  
-    <div class="book-review">
-      <%= @book.review.name %>
-    </div>
-    <div class="book-text">
-    <%= @book.text %>
-    </div>
-    <div class="book-title">
-    <%= @book.title %>
-    </div>
-    <div class="book-time">
-    <%= @book.time %>時間で読み終わる
-    </div>
-    <div class="book-url">
-    <%= @book.url %>
-    </div>
-    <div class="book-author">
-    作者   <%= @book.author %>
-    </div>
-    <%# いいね機能%>
-    <div class="likes">
+  <table class="show-right">
+    <tr>
+      <th>ユーザー名</th>
+      <td class="user-info">
+        <%= @book.user.nick_name %>
+      </td>  
+    </tr>
+    <tr>
+      <th>レビュー</th>
+      <td class="book-review">
+        <%= @book.review.name %>
+      </td>
+    </tr>
+    <tr>
+      <th>感想</th>
+      <td class="book-text">
+        <%= @book.text %>
+      </td>
+    </tr>
+    <tr>
+      <th>タイトル</th>
+      <td class="book-title">
+        <%= @book.title %>
+      </td>
+    </tr>
+    <tr>
+      <th>読み終えるまで</th>
+      <td class="book-time">
+        <%= @book.time %>時間
+      </td>
+    </tr>
+    <tr>
+      <th>URL</th>
+        <td class="book-url">
+          <%= @book.url %>
+        </td>
+    </tr>
+    <tr>
+      <th>作者</th>
+      <td class="book-author">
+        <%= @book.author %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <%# いいね機能%>
+  <div class="likes">
+    <div class="likes-child">
     <% if current_user.already_liked?(@book) %>
-      <%= link_to book_like_path(@book), method: :delete do %>
+      <%= link_to book_like_path(@book), method: :delete, class: "like-link" do %>
       <i class="fas fa-book-open fas-color"></i>
       <% end %> 
     <% else %>
-      <%= link_to book_likes_path(@book), method: :post do %>
+      <%= link_to book_likes_path(@book), method: :post, class: "like-link" do %>
       <i class="fas fa-book-open far-color"></i>
       <% end %> 
     <% end %>
     <%= @book.likes.count %>
     </div>
-    <%# いいね機能%>
-    <% if current_user.id == @book.user_id%>
-    <div class="edit-btn">
-      <%= link_to 'Edit', edit_book_path, method: :get, class: "book-edit-btn" %>
-    </div>
-    <div class="delete-btn">
-      <%= link_to 'Delete', book_path(@book.id), method: :delete, class:'book-delete-btn' %>
-    </div>
-    <% end %>
   </div>
-</div>
+  <%# いいね機能%>
+  <% if current_user.id == @book.user_id%>
+  <div class="edit-btn">
+    <%= link_to 'Edit', edit_book_path, method: :get, class: "book-edit-btn" %>
+  </div>
+  <div class="delete-btn">
+    <%= link_to 'Delete', book_path(@book.id), method: :delete, class:'book-delete-btn' %>
+  </div>
+  <% end %>
 
 <div class="show-bottom">
   <h2 class="show-h2">
@@ -63,7 +87,7 @@
     <ul class='show-lists'>
       <% @books.each do |book| %> 
         <li class='show-list'>
-          <%= link_to book_path(book.id), method: :get  do %>
+          <%= link_to book_path(book.id), method: :get, class: "show-list-link"  do %>
           <div class='show-info'>
             <%= image_tag book.image, class: "show-img" %>
             <%#= book.user.nick_name %>
@@ -79,4 +103,4 @@
 </div>
 
 
-<%#= render "shared/footer" %>
+<%= render "shared/footer" %>

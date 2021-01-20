@@ -33,8 +33,7 @@
     </div>
 
     <div class="field">
-        <label class="form-text">生年月日</label>
-        <span class="indispensable">必須</span>
+        <label class="form-text">BirthDay</label>
     </div>
     <div class='input-birth-wrap'>
         <%= raw sprintf(
@@ -47,10 +46,10 @@
                       start_year: 1930,
                       end_year: (Time.now.year - 5),
                       date_separator: '%s'),
-                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                    "<p> Year </p>", "<p> Month </p>") + "<p> Day </p>" %>
     </div>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up" ,class: "submit-btn" %>
     </div>
   <% end %>
 </div>
