@@ -10,3 +10,27 @@
   font-size: 20px;
   margin-bottom: 50px;
 }
+#book-name {
+  margin-bottom: 20px;
+}
+.img-upload {
+  margin-bottom: 20px;
+}
+.submit-btn {
+  margin-bottom: 20px;
+}
+.submit-btn {
+  margin-bottom: 20px;
+}
+.submitbtn {
+  color: gray;
+}
+.submitbtn:hover {
+  opacity: 0.5;
+}
+.back-btn {
+  color: gray;
+}
+.back-btn:hover {
+  opacity: 0.5;
+}

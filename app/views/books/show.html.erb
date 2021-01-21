@@ -2,7 +2,7 @@
 
 
 <div class="show-main">
-  <div show-left>
+  <div class="show-left">
     <div calss="show-main-img">
       <%= image_tag @book.image, class: "main-img" %>
     </div>
@@ -10,43 +10,43 @@
 
   <table class="show-right">
     <tr>
-      <th>ユーザー名</th>
+      <th class="table-th">ユーザー名</th>
       <td class="user-info">
         <%= @book.user.nick_name %>
       </td>  
     </tr>
     <tr>
-      <th>レビュー</th>
+      <th class="table-th">レビュー</th>
       <td class="book-review">
         <%= @book.review.name %>
       </td>
     </tr>
     <tr>
-      <th>感想</th>
+      <th class="table-th">感想</th>
       <td class="book-text">
         <%= @book.text %>
       </td>
     </tr>
     <tr>
-      <th>タイトル</th>
+      <th class="table-th">タイトル</th>
       <td class="book-title">
         <%= @book.title %>
       </td>
     </tr>
     <tr>
-      <th>読み終えるまで</th>
+      <th class="table-th">読み終わるまで</th>
       <td class="book-time">
         <%= @book.time %>時間
       </td>
     </tr>
     <tr>
-      <th>URL</th>
+      <th class="table-th">URL</th>
         <td class="book-url">
           <%= @book.url %>
         </td>
     </tr>
     <tr>
-      <th>作者</th>
+      <th class="table-th">作者</th>
       <td class="book-author">
         <%= @book.author %>
       </td>
@@ -54,22 +54,24 @@
   </table>
 </div>
 
-  <%# いいね機能%>
-  <div class="likes">
-    <div class="likes-child">
-    <% if current_user.already_liked?(@book) %>
-      <%= link_to book_like_path(@book), method: :delete, class: "like-link" do %>
-      <i class="fas fa-book-open fas-color"></i>
-      <% end %> 
-    <% else %>
-      <%= link_to book_likes_path(@book), method: :post, class: "like-link" do %>
-      <i class="fas fa-book-open far-color"></i>
-      <% end %> 
-    <% end %>
-    <%= @book.likes.count %>
-    </div>
+<%# いいね機能%>
+<div class="likes">
+  <div class="likes-child">
+  <% if current_user.already_liked?(@book) %>
+    <%= link_to book_like_path(@book), method: :delete, class: "like-link" do %>
+    <i class="fas fa-book-open fas-color"></i>
+    <% end %> 
+  <% else %>
+    <%= link_to book_likes_path(@book), method: :post, class: "like-link" do %>
+    <i class="fas fa-book-open far-color"></i>
+    <% end %> 
+  <% end %>
+  <%= @book.likes.count %>
   </div>
-  <%# いいね機能%>
+</div>
+<%# いいね機能%>
+
+<div class="btn">
   <% if current_user.id == @book.user_id%>
   <div class="edit-btn">
     <%= link_to 'Edit', edit_book_path, method: :get, class: "book-edit-btn" %>
@@ -78,6 +80,7 @@
     <%= link_to 'Delete', book_path(@book.id), method: :delete, class:'book-delete-btn' %>
   </div>
   <% end %>
+</div>
 
 <div class="show-bottom">
   <h2 class="show-h2">
